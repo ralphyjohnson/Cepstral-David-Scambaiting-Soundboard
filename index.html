@@ -9,6 +9,29 @@
 
 <body>
 
+	<header>
+		<div class="hd-container">
+			<div id="supportMsg"></div>
+			<div class="option">
+				<label for="voice">Voice</label>
+				<select name="voice" id="voice"></select>
+			</div>
+			<div class="option">
+				<label for="volume">Volume</label>
+				<input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+			</div>
+			<div class="option">
+				<label for="rate">Rate</label>
+				<input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+			</div>
+			<div class="option">
+				<label for="pitch">Pitch</label>
+				<input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
+			</div>
+
+		</div>
+	</header>
+
 	<div id="soundboard"></div>
 
 	<!-- Scripts -->
