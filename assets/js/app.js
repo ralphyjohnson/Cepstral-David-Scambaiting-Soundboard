@@ -2,7 +2,7 @@ let html = '';
 
 // print function for #soundboard
 function print(message) {
-  var outputDiv = document.getElementById('soundboard');
+  const outputDiv = document.getElementById('soundboard');
   outputDiv.innerHTML = message;
 }
 
@@ -11,8 +11,8 @@ html += '<div class="soundboard-container">';
 
 // List all phrases from JSON
 html += '<ul>';
-for ( var phrase in phrases ) {
-	html += '<li><input type="button" value="' + phrases[phrase].say + '"></input></li>';
+for ( let phrase in phrases ) {
+	html += '<li><button>' + phrases[phrase].say + '</button></li>';
 }
 html += '</ul>';
 
@@ -25,16 +25,16 @@ print(html);
 // Text to speech on click
 function say( msg ) {
     with(speechSynthesis) {
-        var s = new(SpeechSynthesisUtterance)(msg);
+        const s = new(SpeechSynthesisUtterance)(msg);
         s.voice = getVoices()[0];
         speak(s);
     }
 }
 
 // what does the TTS say
-var tag = document.querySelectorAll('input');
-for ( i = 0; i < tag.length; i++ ) {
+const tag = document.querySelectorAll('button');
+for ( let i = 0; i < tag.length; i++ ) {
     tag[i].addEventListener('click', function(e) {
-        say(e.target.value);
+        say(tag[i].innerHTML);
     });
 }
